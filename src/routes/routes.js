@@ -10,9 +10,4 @@ router.put("/doctors/:id_doctor", controllerDoctor.toEdit);
 router.delete("/doctors/:id_doctor", controllerDoctor.toDelete);
 router.get("/doctors/:id_doctor/services", controllerDoctor.toListServices);
 
-// doctors
-router.post("/users/register", controllerUser.toInsert);
-router.get("/users/register", controllerUser.toInsert);
-router.get("/users/register", controllerUser.toInsert);
-
 export default router
