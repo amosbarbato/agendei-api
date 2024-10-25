@@ -16,4 +16,11 @@ async function toListByEmail(email) {
   else return user[0];
 }
 
-export default { toInsert, toListByEmail };
+async function toProfile(id_user) {
+  let sql = `select id_user, name, email from users where id_user = ?`;
+
+  const user = await query(sql, [id_user]);
+  return user[0];
+}
+
+export default { toInsert, toListByEmail, toProfile };

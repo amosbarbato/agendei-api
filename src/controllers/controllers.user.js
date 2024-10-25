@@ -17,4 +17,11 @@ async function toLogin(req, res) {
   else res.status(200).json(user);
 }
 
-export default { toInsert, toLogin };
+async function toProfile(req, res) {
+  const id_user = req.id_user;
+
+  const user = await serviceUser.toProfile(id_user);
+  res.status(200).json(user);
+}
+
+export default { toInsert, toLogin, toProfile };

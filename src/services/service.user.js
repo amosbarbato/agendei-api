@@ -26,4 +26,10 @@ async function toLogin(email, password) {
   }
 }
 
-export default { toInsert, toLogin };
+async function toProfile(id_user) {
+  const user = await repoUser.toProfile(id_user);
+
+  return user;
+}
+
+export default { toInsert, toLogin, toProfile };

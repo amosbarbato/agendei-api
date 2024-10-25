@@ -24,6 +24,7 @@ router.get(
 // users
 router.post("/users/register", controllersUser.toInsert);
 router.post("/users/login", controllersUser.toLogin);
+router.get("/users/profile", jwt.ValidateToken, controllersUser.toProfile);
 
 // appointments
 router.get(
