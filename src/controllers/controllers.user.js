@@ -7,4 +7,14 @@ async function toInsert(req, res) {
   res.status(201).json(user);
 }
 
-export default { toInsert };
+async function toLogin(req, res) {
+  const { email, password } = req.body;
+
+  const user = await serviceUser.toLogin(email, password);
+
+  if (user.length == 0)
+    res.status(401).json({ error: "E-mail ou senha inválida." });
+  else res.status(200).json(user);
+}
+
+export default { toInsert, toLogin };

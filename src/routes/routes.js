@@ -13,6 +13,7 @@ router.get("/doctors/:id_doctor/services", controllerDoctor.toListServices);
 
 // users
 router.post("/users/register", controllersUser.toInsert);
+router.post("/users/login", controllersUser.toLogin);
 
 
 export default router

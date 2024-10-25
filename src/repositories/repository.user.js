@@ -7,4 +7,13 @@ async function toInsert(name, email, password) {
   return user[0];
 }
 
-export default { toInsert };
+async function toListByEmail(email) {
+  let sql = `select * from users where email = ?`;
+
+  const user = await query(sql, [email]);
+
+  if (user.length == 0) return [];
+  else return user[0];
+}
+
+export default { toInsert, toListByEmail };
