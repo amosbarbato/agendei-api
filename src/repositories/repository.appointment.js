@@ -38,4 +38,12 @@ async function toInsert(
   return appointment[0];
 }
 
-export default { toList, toInsert };
+async function toDelete(id_user, id_appointment) {
+  let sql = `delete from appointments
+  where id_appointment=? and id_user=?`;
+
+  await query(sql, [id_appointment, id_user]);
+  return { id_appointment };
+}
+
+export default { toList, toInsert, toDelete };

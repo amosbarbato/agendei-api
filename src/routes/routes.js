@@ -37,6 +37,11 @@ router.post(
   jwt.ValidateToken,
   controllersAppointment.toInsert
 );
+router.delete(
+  "/appointments/:id_appointment",
+  jwt.ValidateToken,
+  controllersAppointment.toDelete
+);
 
 
 export default router

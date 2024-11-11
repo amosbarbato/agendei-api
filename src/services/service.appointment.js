@@ -24,4 +24,10 @@ async function toInsert(
   return appointment;
 }
 
-export default { toList, toInsert };
+async function toDelete(id_user, id_appointment) {
+  const appointment = await repoAppointment.toDelete(id_user, id_appointment);
+
+  return appointment;
+}
+
+export default { toList, toInsert, toDelete };
